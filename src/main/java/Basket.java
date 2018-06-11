@@ -3,6 +3,7 @@ import java.util.ArrayList;
 public class Basket {
 
     private ArrayList<Item> contents;
+    private double totalCost;
 
     public Basket() {
         this.contents = new ArrayList <>();
@@ -25,11 +26,11 @@ public class Basket {
     }
 
     public double getTotalCost() {
-        double total = 0.00;
+        totalCost = 0;
         for (Item item : this.contents) {
-            total += item.getPrice();
+            totalCost += item.getPrice();
         }
-        return total;
+        return totalCost;
     }
 
     public int countSpecificItems(Item item) {
@@ -41,4 +42,6 @@ public class Basket {
         }
         return total;
     }
+
+
 }
