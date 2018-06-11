@@ -27,5 +27,5 @@ public class ItemTest {
         item.setPrice(25.00);
         assertEquals(25.00, item.getPrice());
     }
-    
+
 }
