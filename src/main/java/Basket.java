@@ -23,4 +23,12 @@ public class Basket {
     public void clearItems() {
         this.contents.clear();
     }
+
+    public double getTotalCost() {
+        double total = 0.00;
+        for (Item item : this.contents) {
+            total += item.getPrice();
+        }
+        return total;
+    }
 }
