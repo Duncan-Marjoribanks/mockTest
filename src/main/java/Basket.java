@@ -31,5 +31,14 @@ public class Basket {
         }
         return total;
     }
-    
+
+    public int countSpecificItems(Item item) {
+        int total = 0;
+        for (Item itemToCheck : this.contents) {
+            if (itemToCheck == item) {
+                total ++;
+            }
+        }
+        return total;
+    }
 }
