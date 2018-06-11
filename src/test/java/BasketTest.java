@@ -46,4 +46,11 @@ public class BasketTest {
         basket.addItem(item);
         assertEquals(100.00, basket.getTotalCost(), 0.01);
     }
+
+    @Test
+    public void canCountNumberOfSameItems() {
+        basket.addItem(item);
+        basket.addItem(item);
+        assertEquals(2, basket.countSpecificItems(item));
+    }
 }
