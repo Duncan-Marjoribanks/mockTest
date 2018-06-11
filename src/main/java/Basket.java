@@ -8,5 +8,8 @@ public class Basket {
         this.contents = new ArrayList <>();
     }
 
+    public int countItems() {
+        return this.contents.size();
+    }
     
 }
