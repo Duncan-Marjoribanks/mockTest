@@ -11,5 +11,8 @@ public class Basket {
     public int countItems() {
         return this.contents.size();
     }
-    
+
+    public void addItem(Item item) {
+        this.contents.add(item);
+    }
 }
