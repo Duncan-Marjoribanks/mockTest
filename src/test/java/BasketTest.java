@@ -53,4 +53,13 @@ public class BasketTest {
         basket.addItem(item);
         assertEquals(2, basket.countSpecificItems(item));
     }
+
+    @Test
+    public void canAddBuyOneGetOneFreeDiscount() {
+        basket.addItem(item);
+        basket.addItem(item);
+        basket.addItem(item);
+        basket.AddBogofDiscount(item);
+        assertEquals(100.00, basket.getTotalCost());
+    }
 }
