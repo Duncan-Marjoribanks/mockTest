@@ -15,4 +15,8 @@ public class Basket {
     public void addItem(Item item) {
         this.contents.add(item);
     }
+
+    public void removeItem(Item item) {
+        this.contents.remove(item);
+    }
 }
