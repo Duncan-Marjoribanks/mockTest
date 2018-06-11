@@ -59,7 +59,7 @@ public class BasketTest {
         basket.addItem(item);
         basket.addItem(item);
         basket.addItem(item);
-        basket.AddBogofDiscount(item);
+        basket.addBogofDiscount(item);
         assertEquals(100.00, basket.getTotalCost());
     }
 }

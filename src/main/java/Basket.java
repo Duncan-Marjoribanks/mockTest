@@ -26,11 +26,14 @@ public class Basket {
     }
 
     public double getTotalCost() {
+//        int total = 0;
         totalCost = 0;
         for (Item item : this.contents) {
             totalCost += item.getPrice();
+//            total += item.getPrice();
         }
         return totalCost;
+//        return total;
     }
 
     public int countSpecificItems(Item item) {
@@ -41,6 +44,16 @@ public class Basket {
             }
         }
         return total;
+    }
+
+    public void addBogofDiscount(Item item) {
+        if (this.countSpecificItems(item) % 2 == 0){
+            item.setPrice(item.getPrice() * 0.5);
+        }
+        else {
+            item.setPrice(item.getPrice() * 0.5);
+            addItem(item);
+        }
     }
 
 
