@@ -44,22 +44,44 @@ public class BasketTest {
     public void canGetTotalCostOfAllItems() {
         basket.addItem(item);
         basket.addItem(item);
-        assertEquals(100.00, basket.getTotalCost(), 0.01);
+        basket.updateTotalCost();
+        assertEquals(150.00, basket.getTotalCost(), 0.01);
     }
 
     @Test
     public void canCountNumberOfSameItems() {
         basket.addItem(item);
         basket.addItem(item);
+        basket.updateTotalCost();
         assertEquals(2, basket.countSpecificItems(item));
     }
 
     @Test
-    public void canAddBuyOneGetOneFreeDiscount() {
+    public void canApplyDiscount() {
+        basket.addItem(item);
+        basket.addItem(item);
+        basket.updateTotalCost();
+        basket.applyDiscount(50);
+        assertEquals(75.00, basket.getTotalCost(), 0.01);
+    }
+
+    @Test
+    public void canUpdateTotalCost() {
+        basket.addItem(item);
+        assertEquals(75.00, basket.getTotalCost(), 0.01);
+        basket.clearItems();
+        assertEquals(0.00, basket.getTotalCost(), 0.01);
+    }
+
+    @Test
+    public void canApplyBogofDiscount() {
+        basket.addItem(item);
+        basket.addItem(item);
         basket.addItem(item);
         basket.addItem(item);
         basket.addItem(item);
         basket.addBogofDiscount(item);
-        assertEquals(100.00, basket.getTotalCost());
+        assertEquals(150.00, basket.getTotalCost(), 0.01);
     }
+
 }
