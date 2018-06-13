@@ -11,7 +11,7 @@ public class BasketTest {
     @Before
     public void before() {
         basket = new Basket();
-        item = new Item("thing", 50.00);
+        item = new Item("thing", 50.00, false);
     }
 
     @Test
