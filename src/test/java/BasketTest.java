@@ -45,7 +45,7 @@ public class BasketTest {
         basket.addItem(item);
         basket.addItem(item);
         basket.updateTotalCost();
-        assertEquals(100.00, basket.getTotalCost(), 0.01);
+        assertEquals(90.00, basket.getTotalCost(), 0.01);
     }
 
     @Test
@@ -57,18 +57,9 @@ public class BasketTest {
     }
 
     @Test
-    public void canApplyDiscount() {
-        basket.addItem(item);
-        basket.addItem(item);
-        basket.updateTotalCost();
-        basket.applyDiscount(50);
-        assertEquals(50.00, basket.getTotalCost(), 0.01);
-    }
-
-    @Test
     public void canUpdateTotalCost() {
         basket.addItem(item);
-        assertEquals(50.00, basket.getTotalCost(), 0.01);
+        assertEquals(45.00, basket.getTotalCost(), 0.01);
         basket.clearItems();
         assertEquals(0.00, basket.getTotalCost(), 0.01);
     }
@@ -81,7 +72,7 @@ public class BasketTest {
         basket.addItem(item);
         basket.addItem(item);
         basket.addBogofDiscount(item);
-        assertEquals(150.00, basket.getTotalCost(), 0.01);
+        assertEquals(135.00, basket.getTotalCost(), 0.01);
     }
 
     @Test
@@ -92,7 +83,6 @@ public class BasketTest {
         basket.addItem(item);
         basket.addItem(item);
         basket.addBogofDiscount(item);
-        basket.applyDiscount(10);
         assertEquals(135.00, basket.getTotalCost(), 0.01);
     }
 

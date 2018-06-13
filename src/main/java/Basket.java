@@ -31,6 +31,9 @@ public class Basket {
     }
 
     public double getTotalCost() {
+        if (this.totalCost >= 20.00) {
+            this.applyDiscount(10);
+        }
         return this.totalCost;
     }
 
