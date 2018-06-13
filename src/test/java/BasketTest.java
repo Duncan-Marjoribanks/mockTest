@@ -45,7 +45,7 @@ public class BasketTest {
         basket.addItem(item);
         basket.addItem(item);
         basket.updateTotalCost();
-        assertEquals(150.00, basket.getTotalCost(), 0.01);
+        assertEquals(100.00, basket.getTotalCost(), 0.01);
     }
 
     @Test
@@ -62,13 +62,13 @@ public class BasketTest {
         basket.addItem(item);
         basket.updateTotalCost();
         basket.applyDiscount(50);
-        assertEquals(75.00, basket.getTotalCost(), 0.01);
+        assertEquals(50.00, basket.getTotalCost(), 0.01);
     }
 
     @Test
     public void canUpdateTotalCost() {
         basket.addItem(item);
-        assertEquals(75.00, basket.getTotalCost(), 0.01);
+        assertEquals(50.00, basket.getTotalCost(), 0.01);
         basket.clearItems();
         assertEquals(0.00, basket.getTotalCost(), 0.01);
     }
