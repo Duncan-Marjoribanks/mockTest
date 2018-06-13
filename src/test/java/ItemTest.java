@@ -9,7 +9,7 @@ public class ItemTest {
 
     @Before
     public void before() {
-        item = new Item("item", 50.00, false);
+        item = new Item("item", 50.00);
     }
 
     @Test
@@ -26,19 +26,6 @@ public class ItemTest {
     public void canSetPrice() {
         item.setPrice(25.00);
         assertEquals(25.00, item.getPrice());
-    }
-
-    @Test
-    public void canSetBogofTrue() {
-        item.setHasBogofDiscount();
-        assertEquals(true, item.getBogofDiscountStatus());
-    }
-
-    @Test
-    public void canSetBogofFalse() {
-        item.setHasBogofDiscount();
-        item.setHasNotBogofDiscount();
-        assertEquals(false, item.getBogofDiscountStatus());
     }
 
 }

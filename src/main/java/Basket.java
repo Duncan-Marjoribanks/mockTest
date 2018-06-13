@@ -64,7 +64,7 @@ public class Basket {
     }
 
     public void applyDiscount(int percentage) {
-        this.totalCost = ((this.totalCost/100) * percentage);
+        this.totalCost -= ((this.totalCost/100) * percentage);
     }
 
 }

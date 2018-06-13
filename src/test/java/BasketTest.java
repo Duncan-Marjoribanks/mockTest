@@ -11,7 +11,7 @@ public class BasketTest {
     @Before
     public void before() {
         basket = new Basket();
-        item = new Item("thing", 50.00, false);
+        item = new Item("thing", 50.00);
     }
 
     @Test
@@ -83,5 +83,18 @@ public class BasketTest {
         basket.addBogofDiscount(item);
         assertEquals(150.00, basket.getTotalCost(), 0.01);
     }
+
+    @Test
+    public void canDiscountByPercentageAfterBogofDiscountApplied() {
+        basket.addItem(item);
+        basket.addItem(item);
+        basket.addItem(item);
+        basket.addItem(item);
+        basket.addItem(item);
+        basket.addBogofDiscount(item);
+        basket.applyDiscount(10);
+        assertEquals(135.00, basket.getTotalCost(), 0.01);
+    }
+
 
 }
