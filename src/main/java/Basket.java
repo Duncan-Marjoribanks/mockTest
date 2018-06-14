@@ -30,10 +30,13 @@ public class Basket {
         this.updateTotalCost();
     }
 
-    public double getTotalCost() {
+    public void finalizeTotal() {
         if (this.totalCost >= 20.00) {
             this.applyDiscount(10);
         }
+    }
+
+    public double getTotalCost() {
         return this.totalCost;
     }
 

@@ -5,27 +5,35 @@ import static junit.framework.TestCase.assertEquals;
 
 public class CustomerTest {
 
-    Customer customer, customer2;
-    Basket basket;
-    Item item, item2;
+    Customer customer1, customer2;
+    Item item1, item2;
 
     @Before
     public void before() {
-        customer = new Customer(false);
+        customer1 = new Customer(false);
         customer2 = new Customer(true);
-        basket = new Basket();
-        item = new Item("item", 50.00);
+        item1 = new Item("item", 200.00);
         item2 = new Item("item2", 10.00);
     }
 
     @Test
     public void canCheckIfHasLoyaltyCard() {
-        assertEquals(false, customer.checkIfLoyalty());
+        assertEquals(false, customer1.checkIfLoyalty());
         assertEquals(true, customer2.checkIfLoyalty());
     }
 
+    @Test
+    public void canAddItemsToCustomerBasket() {
+        customer1.basket.addItem(item1);
+        customer1.basket.finalizeTotal();
+        assertEquals(1, customer1.basket.countItems());
+    }
 
-
-
+    @Test
+    public void canDiscountForLoyaltyCard() {
+        customer2.basket.addItem(item1);
+        customer2.basket.finalizeTotal();
+        assertEquals(176.40, customer2.getTotalCostOfBasket(), 0.01);
+    }
 
 }
